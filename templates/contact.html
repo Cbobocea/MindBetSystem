@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3260761044192529"
+     crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <title>Contact Us - Mindbet Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #e6edf3;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .contact-header {
+      background: linear-gradient(135deg, #0d6efd, #6610f2);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .contact-header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-header p {
+      font-size: 1.1rem;
+      color: #d6e0f0;
+    }
+
+    .form-section {
+      max-width: 700px;
+      margin: -60px auto 0 auto;
+      background-color: #161b22;
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+
+    label {
+      color: #8b949e;
+      font-weight: 500;
+    }
+
+    .form-control {
+      background-color: #0d1117;
+      border: 1px solid #30363d;
+      color: #e6edf3;
+    }
+
+    .form-control:focus {
+      border-color: #58a6ff;
+      box-shadow: 0 0 0 0.2rem rgba(88, 166, 255, 0.25);
+    }
+
+    .btn-send {
+      background-color: #58a6ff;
+      color: #0d1117;
+      border: none;
+      padding: 0.6rem 2.5rem;
+      font-weight: 500;
+    }
+
+    .btn-send:hover {
+      background-color: #1f6feb;
+      color: #fff;
+    }
+
+    .alert-success {
+      background-color: #2ea043;
+      border: none;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: #8b949e;
+      font-size: 0.9rem;
+    }
+    .navbar {
+  background-color: #161b22 !important;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: #e6edf3 !important;
+}
+
+.navbar .nav-link:hover {
+  color: #58a6ff !important;
+}
+
+.dropdown-menu {
+  background-color: #161b22 !important;
+}
+
+.dropdown-item {
+  color: #e6edf3 !important;
+}
+
+.dropdown-item:hover {
+  color: #58a6ff !important;
+  background-color: #0d1117 !important;
+}
+  </style>
+</head>
+<body>
+
+{% include "navbar.html" %}
+
+<div class="contact-header">
+  <h1>📬 Contact Mindbet</h1>
+  <p>Have feedback, ideas, or business inquiries? Let's connect.</p>
+</div>
+
+<section class="form-section">
+  <form method="POST" action="/contact">
+    <div class="mb-3">
+      <label for="name" class="form-label">Your Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Jane Doe" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Your Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="message" class="form-label">Your Message</label>
+      <textarea class="form-control" id="message" name="message" rows="5" placeholder="How can we help you today?" required></textarea>
+    </div>
+
+    <div class="text-end">
+      <button type="submit" class="btn btn-send">Send Message</button>
+    </div>
+
+    {% if success %}
+    <div class="alert alert-success text-center mt-4">
+      ✅ Your message has been delivered! We'll be in touch shortly.
+    </div>
+    {% endif %}
+  </form>
+</section>
+
+<footer>
+  &copy; {{ now.year }} Mindbet Systems. All rights reserved.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

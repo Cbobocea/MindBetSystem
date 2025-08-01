@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="/home">
+  <img src="/static/img/logo.jpg" alt="Mindbet Logo" width="32" height="32" class="me-2 logo-hover">
+  <span class="brand-text">Mindbet Systems</span>
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Products
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+            <li><a class="dropdown-item" href="/">Soccer</a></li>
+            <li><a class="dropdown-item" href="/esports">eSports</a></li>
+            <li><a class="dropdown-item" href="https://www.amazon.co.uk/Mindbet-Systems-Berglas-Sequence/dp/B0F99XQSGM/ref=sr_1_1?crid=3PBQAG91GSSHN&dib=eyJ2IjoiMSJ9.rMIgSyQ2QCcz__TGDmH6ww.AGK4tPPkSmD2c2N3wwGTQZeYv3CnwQGFrHP6vImmhCw&dib_tag=se&keywords=berglas+sequence&qid=1747997713&s=mobile-apps&sprefix=berglas+sequence%2Cmobile-apps%2C91&sr=1-1">Berglas Sequence</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+        {% if session.get("email") %}
+          <li class="nav-item"><a class="nav-link" href="/account">Account</a></li>
+          <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+        {% else %}
+          <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
